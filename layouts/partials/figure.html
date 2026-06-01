@@ -1,0 +1,54 @@
+{{/*
+  Site override: resolve static image paths through Hugo so thumbnails work on GitHub Pages.
+*/}}
+
+{{- $file := .file -}}
+{{- $image := .image -}}
+{{- $dir := .dir -}}
+{{- $alt := .alt -}}
+{{- $cap := .cap -}}
+{{- $classes := .classes -}}
+{{- $bundle := .bundle -}}
+
+{{- if eq $bundle true -}}
+  {{ $file = path.Join "/" $dir $file }}
+{{- end -}}
+
+<figure>
+  <picture>
+
+    {{- with $file -}}
+      {{ $name := replace $file (path.Ext $file) "" }}
+      {{ $ext := slice "avif" "webp" "jxl" }}
+      {{- range $ext -}}
+        {{ $path := printf "%s" . | printf "%s%s" "." | printf "%s%s" $name | printf "%s" }}
+        {{- if fileExists $path -}}
+          <source srcset="{{ $path | absURL }}" type="image/{{ . }}">
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="{{ htmlEscape $alt }}"
+      {{ with $image }}
+        class="{{ $classes }} image_processed"
+        width="{{ .Width }}"
+        height="{{ .Height }}"
+        src="{{ .RelPermalink }}"
+      {{ else }}
+        class="{{ $classes }} image_unprocessed"
+        src="{{ $file | absURL }}"
+      {{ end }}
+      {{ with $cap }}
+        title="{{ htmlEscape $cap }}"
+      {{ end }}
+    />
+
+    {{- if not (eq $cap " ") -}}
+      <figcaption>{{ $cap | safeHTML }}</figcaption>
+    {{- end -}}
+
+  </picture>
+</figure>

@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="grid-inverse wrap content">
+  <div>
+    <section class="home-intro post_content">
+      {{ with .Content }}
+        <div class="home-intro_body">{{ . }}</div>
+      {{ end }}
+    </section>
+
+    {{ partial "home-quick-list.html" . }}
+
+    <section class="home-posts">
+      {{ partial "home-post-index.html" . }}
+    </section>
+  </div>
+  {{- partial "sidebar" . }}
+</div>
+{{ end }}

@@ -1,0 +1,60 @@
+[[main]]
+  name = "Home"
+  url = "/"
+  weight = -110
+
+#[[main]]
+#  name = "Archives"
+#  url = "post/rich-content/"
+#  weight = -109
+
+# Submenus are done this way: parent -> identifier
+#[[main]]
+#  name = "Links"
+#  identifier = "Links"
+#  weight = -108
+#[[main]]
+#  parent = "Links"
+#  name = "GitHub"
+#  url = "https://github.com/Aegrah/"
+#[[main]]
+#  parent = "Links"
+#  name = "LinkedIn"
+#  url = "https://www.linkedin.com/in/ruben-groenewoud/"
+
+[[main]]
+  name = "About me"
+  url = "about.html"
+  weight = -107
+
+# social menu links
+
+[[social]]
+  name = "github"
+  type = "social"
+  weight = 1
+  url = "https://github.com/Aegrah/"
+#[[social]]
+#  name = "twitter"
+#  weight = 2
+#  url = "https://twitter.com/#"
+[[social]]
+  name = "linkedin"
+  weight = 3
+  url = "https://www.linkedin.com/in/ruben-groenewoud/"
+#[[social]]
+#  name = "rss"
+#  weight = 4
+#  url = "index.xml"
+
+# other supported social links
+# name = "youtube"
+# url = "https://www.youtube.com/#"
+# name = "facebook"
+# url = "https://facebook.com/#"
+# name = "instagram"
+# url = "https://instagram.com/#"
+# name = "stackoverflow"
+# url = "https://stackoverflow.com/#"
+# name = "gitlab"
+# url = "https://gitlab.com/#"

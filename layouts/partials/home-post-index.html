@@ -1,0 +1,7 @@
+{{ $posts := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{ $posts = $posts.ByDate.Reverse }}
+<ul class="posts" id="posts">
+  {{- range $posts }}
+    {{ partial "excerpt" . }}
+  {{- end }}
+</ul>

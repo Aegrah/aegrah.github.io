@@ -1,0 +1,34 @@
+# set `baseurl` to your root domain
+# if you set it to "/" share icons won't work properly on production
+baseurl = "https://aegrah.github.io/"  # Include trailing slash
+uglyurls = true
+
+# title = "Clarity"  # Edit directly from config/_default/languages.toml # alternatively, uncomment this and remove `title` entry from the aforemention file.
+copyright = "Copyright © Ruben Groenewoud"
+# canonifyurls = true
+paginate = 10
+
+theme = "hugo-clarity"
+disqusShortname = ""
+
+DefaultContentLanguage = "en"
+
+# theme = ["github.com/chipzoller/hugo-clarity"]
+
+#[module]
+#[[module.imports]]
+#    path = 'github.com/chipzoller/hugo-clarity'
+
+# [languages]
+# config/_default/languages.toml
+
+# [menus]
+# config/_default/menus/menu.xx.toml
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]

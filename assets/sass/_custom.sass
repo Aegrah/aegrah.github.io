@@ -1,0 +1,53 @@
+.home-intro
+  margin-bottom: 2rem
+
+  &_body
+    font-size: 1.05rem
+    line-height: 1.6
+
+.home-quick-list
+  margin-bottom: 2.5rem
+
+  h2
+    margin-bottom: 0.75rem
+
+  ul
+    list-style: none
+    padding: 0
+    margin: 0
+    columns: 1
+
+    @media screen and (min-width: 769px)
+      columns: 2
+      column-gap: 2rem
+
+  li
+    break-inside: avoid
+    padding: 0.2rem 0
+
+  a
+    text-decoration: none
+
+    &:hover
+      text-decoration: underline
+
+.home-posts
+  .posts
+    padding: 0
+
+.excerpt_thumbnail
+  display: block !important
+
+  figure
+    margin: 0
+
+  img
+    width: 100%
+    height: auto
+    max-height: 12rem
+    object-fit: cover
+    border-radius: 0.5rem
+
+.excerpt_footer.partition
+  @media screen and (min-width: 769px)
+    align-items: start

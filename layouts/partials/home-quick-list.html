@@ -1,0 +1,12 @@
+{{ $posts := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{ $posts = $posts.ByDate.Reverse }}
+<section class="home-quick-list">
+  <h2>All posts</h2>
+  <ul>
+    {{- range $posts }}
+      <li>
+        <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
+      </li>
+    {{- end }}
+  </ul>
+</section>

@@ -1,0 +1,6 @@
+public
+hugo-bin*/
+hugo*.zip
+resources/_gen/
+content/post/.obsidian/
+.hugo_build.lock
